@@ -3,11 +3,6 @@ import mediapipe as mp
 import numpy as np
 import time
 
-# TODO need to install packages, see rows below
-# pip install opencv-python
-# pip install mediapipe
-# pip install numpy
-
 mp_drawing = mp.solutions.drawing_utils
 mp_drawing_styles = mp.solutions.drawing_styles
 mp_pose = mp.solutions.pose
