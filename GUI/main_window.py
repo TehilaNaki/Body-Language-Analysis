@@ -64,7 +64,7 @@ rep = PushButton(app, calculate, text='Report', grid=[70, 0, 40, 2])
 rep.bg = 'red'
 pic = Drawing(app, grid=[1, 4, 70, 70])
 viewer = Picture(app, grid=[1, 4, 70, 70])
-duration=Slider(app,start=0,end=100,grid=[50,50])
-duration.bg = 'green'
+#duration=Slider(app,start=0,end=100,grid=[50,50])
+#duration.bg = 'green'
 # Display---------------------------------------------------
 app.display()
