@@ -6,7 +6,7 @@ from sklearn.preprocessing import MultiLabelBinarizer
 
 mlb = MultiLabelBinarizer()
 
-data_folder = '/Users/ruthmiller/Documents/computer_science_studies/4th_year/semesterA/AI/project/data/'
+data_folder = 'POSE_DETECTION/data/'
 x_train = pd.read_csv(data_folder + 'data_x.csv')
 y_train = pd.read_csv(data_folder + 'annotations.csv')
 

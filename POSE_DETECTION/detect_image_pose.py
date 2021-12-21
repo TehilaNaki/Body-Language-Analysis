@@ -25,7 +25,7 @@ landmarks = {'RIGHT_SHOULDER': mp_pose_landmark.RIGHT_SHOULDER, 'LEFT_SHOULDER':
               'LEFT_FOOT_INDEX': mp_pose_landmark.LEFT_FOOT_INDEX}
 
 # For static images:
-data_folder = '/Users/ruthmiller/Documents/computer_science_studies/4th_year/semesterA/AI/project/annotations/'
+data_folder = 'POSE_DETECTION/images/'
 img_ext = ('.jpeg', '.jpg', '.png', '.tiff')
 IMAGE_FILES = []
 for file in os.listdir(data_folder):
