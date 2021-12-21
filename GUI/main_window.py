@@ -10,11 +10,12 @@ from tkinter.ttk import *
 
 from matplotlib.pyplot import grid
 
-'''pip3 install guizero
- pip3 install guizero[images]
- set READTHEDOCS=True
- pip install picamera
- '''
+'''
+pip3 install guizero
+pip3 install guizero[images]
+set READTHEDOCS=True
+pip install picamera
+'''
 
 
 # Functions------------------------------------------------
