@@ -4,9 +4,8 @@ from sklearn.multioutput import MultiOutputClassifier
 from sklearn.preprocessing import MultiLabelBinarizer
 from POSE_DETECTION.detect_single_image_pose_coordinates import ImageToCoordinates
 
-mlb = MultiLabelBinarizer()
-
 data_folder = 'POSE_DETECTION/data/'
+mlb = MultiLabelBinarizer()
 x_train = pd.read_csv(data_folder + 'data_x.csv')
 y_train = pd.read_csv(data_folder + 'annotations.csv')
 

@@ -71,10 +71,11 @@ with mp_pose.Pose(
             results.pose_landmarks,
             mp_pose.POSE_CONNECTIONS,
             landmark_drawing_spec=mp_drawing_styles.get_default_pose_landmarks_style())
-        cv2.imwrite(data_folder + 'tmp/annotated_image' + str(idx) + '.png', annotated_image)
+        cv2.imwrite('/Users/ruthmiller/Documents/computer_science_studies/4th_year/semesterA/AI/project/data/tmp/annotated_image' + str(idx) + '.png', annotated_image)
         # Plot pose world landmarks.
         mp_drawing.plot_landmarks(
             results.pose_world_landmarks, mp_pose.POSE_CONNECTIONS)
         dict_list.append(res)
 
 res_df = pd.DataFrame(dict_list)
+
