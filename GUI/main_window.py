@@ -21,6 +21,8 @@ pip install picamera
 # Functions------------------------------------------------
 def calculate():
     pass
+
+
 # Function for opening the file explorer window
 def browseFiles():
     filename = filedialog.askopenfilename(initialdir="/",
@@ -54,8 +56,8 @@ MESSAGE = 'please insert image'
 app = App(title=NAME, layout='grid')
 
 # Widgets---------------------------------------------------
-#message = Text(app, text=MESSAGE)
-#message.text_size = 40
+# message = Text(app, text=MESSAGE)
+# message.text_size = 40
 app.bg = 'pink'
 up = PushButton(app, upload_img, text='Upload', grid=[0, 0, 40, 2])
 up.bg = 'red'
@@ -65,7 +67,7 @@ rep = PushButton(app, calculate, text='Report', grid=[70, 0, 40, 2])
 rep.bg = 'red'
 pic = Drawing(app, grid=[1, 4, 70, 70])
 viewer = Picture(app, grid=[1, 4, 70, 70])
-#duration=Slider(app,start=0,end=100,grid=[50,50])
-#duration.bg = 'green'
+# duration=Slider(app,start=0,end=100,grid=[50,50])
+# duration.bg = 'green'
 # Display---------------------------------------------------
 app.display()

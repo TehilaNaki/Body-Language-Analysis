@@ -67,16 +67,19 @@ import tkinter.ttk as ttk
 
 tuple_1 = tuple(range(1, 25))
 
+
 def progress_bar_func(style, progress_bar, sequence):
     root.after(500, update_progress_bar, style, progress_bar, 1, len(sequence))
 
+
 def update_progress_bar(style, progress_bar, num, limit):
     if num <= limit:
-        percentage = round(num/limit * 100)  # Calculate percentage.
+        percentage = round(num / limit * 100)  # Calculate percentage.
         progress_bar.config(value=num)
         style.configure('text.Horizontal.TProgressbar', text='{:g} %'.format(percentage))
         num += 1
         root.after(500, update_progress_bar, style, progress_bar, num, limit)
+
 
 root = tk.Tk()
 root.geometry("300x300")
