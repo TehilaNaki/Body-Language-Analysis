@@ -8,8 +8,8 @@ from POSE_DETECTION.detect_single_image_pose_coordinates import ImageToCoordinat
 class PoseClassifier:
     def __init__(self, data_folder='data/'):
         mlb = MultiLabelBinarizer()
-        x_train = pd.read_csv(data_folder + 'data_x.csv')
-        y_train = pd.read_csv(data_folder + 'annotations.csv')
+        x_train = pd.read_csv(data_folder + '\\data_x.csv')
+        y_train = pd.read_csv(data_folder + '\\annotations.csv')
 
         # preprocess
         x_train['image_id'] = pd.to_numeric(x_train['image_id'], errors='coerce')
