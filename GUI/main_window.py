@@ -1,13 +1,9 @@
-import cv2
-import duration as duration
-from guizero import *
-from guizero import Text
 from tkinter import *
-from PIL import Image
-from guizero import App, Text
-from matplotlib._text_layout import layout
 
-from matplotlib.pyplot import grid
+import cv2
+from PIL import Image
+from guizero import *
+from guizero import App, Text
 
 '''
 pip3 install guizero
@@ -16,7 +12,9 @@ set READTHEDOCS=True
 pip install picamera
 '''
 DATA_PATH = 'POSE_DETECTION/images'
-EMOTIONS_LIST= ['positive_interaction', 'discomfort', 'insecure', 'anger', 'happines', 'excitement', 'confidence', 'confusion', 'reliability']
+EMOTIONS_LIST = ['positive_interaction', 'discomfort', 'insecure', 'anger', 'happines', 'excitement', 'confidence',
+                 'confusion', 'reliability']
+
 
 # Functions------------------------------------------------
 def recommand(emo):
@@ -25,21 +23,21 @@ def recommand(emo):
 
 def calculate(emo_res, emo_list):
     button_list = {}
-    emo_box = Box(app, grid=[5, 0],align='right')
+    emo_box = Box(app, grid=[5, 0], align='right')
 
     for emo in emo_list:
-        #im = Image.open(emo + '.jpg')
-        im = Image.open('angry'+ '.jpg')
+        # im = Image.open('emotion_icons/'+emo + '.jpg')
+        im = Image.open('emotion_icons/angry' + '.jpg')
         im = im.resize((50, 50))
         box = Box(emo_box, align='top')
         PushButton(box, command=recommand(emo), align='right', image=im)
-        txt=Text(box,align='right',text=emo,height=1,width=20)
+        txt = Text(box, align='right', text=emo, height=1, width=20)
         button_list[emo] = box
         if emo in emo_res:
             button_list[emo].bg = 'green'
         else:
             button_list[emo].bg = 'yellow'
-    #return button_list
+    # return button_list
 
 
 # Function for opening the file explorer window
@@ -79,9 +77,9 @@ MESSAGE = 'please insert image'
 app = App(title=NAME, layout='grid', height=650, width=650)
 
 # Widgets---------------------------------------------------
-#message = Text(app, text=MESSAGE)
+# message = Text(app, text=MESSAGE)
 # message.text_size = 40
-b = Box(app, grid=[0,1, 3, 1])
+b = Box(app, grid=[0, 1, 3, 1])
 app.bg = 'lightblue'
 up = PushButton(b, command=upload_img, text='Upload', align='left')
 up.bg = 'red'
@@ -89,9 +87,9 @@ take = PushButton(b, command=capture_img, text='Take a picture', align='left')
 take.bg = 'red'
 rep = PushButton(b, command=calculate(['anger'], EMOTIONS_LIST), text='Report', align='left')
 rep.bg = 'red'
-viewer = Picture(app,image='th.jpg',grid=[1, 0])
-#name_img = TextBox(app, grid=[0, 1])
-#text = Text(app, text="recommand",grid=[0,30])
+viewer = Picture(app, image='mad.jpg', grid=[1, 0])
+# name_img = TextBox(app, grid=[0, 1])
+# text = Text(app, text="recommand",grid=[0,30])
 
 
 # Display---------------------------------------------------
