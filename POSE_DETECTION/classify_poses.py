@@ -38,7 +38,7 @@ if sample2 is not None:
     sample2 = [sample2.iloc[0].tolist()]
     pred2 = multi_target_forest.predict(sample2)
     transformed_pred2 = list(mlb.inverse_transform(pred2)[0])
-    print('image: ', '0003')
+    print('image: ', image_path)
     print('prediction: ', transformed_pred2)
 
 
