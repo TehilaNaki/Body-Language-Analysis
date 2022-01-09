@@ -1,19 +1,19 @@
-image_id,label,,,,
-1,"['happines', 'confidence']",,,,
-2,"['happines', 'confidence', 'excitement']",,,,
-3,"['happines', 'confidence', 'excitement']",,,,
-4,"['happines', 'confidence', 'positive_interaction']",,,,
-5,"['happines', 'confidence', 'positive_interaction']",,,,
-7,['insecure'],,,,
-8,"['positive_interaction', 'reliability']",,,,
-9,['confusion'],,,,
-10,"['confusion', 'anger']",,,,
-12,['anger'],,,,
-13,"['anger', 'discomfort']",,,,
-14,"['happines', 'excitement']",,,,
-15,"['confidence', 'positive_interaction', 'reliability']",,,,
-16,['discomfort'],,,,
-17,"['positive_interaction', 'reliability']",,,,
-18,"['positive_interaction', 'reliability']",,,,
-19,['reliability'],,,,
-20,['confusion'],,,,
+image_id,label
+1,"['happines', 'confidence']"
+2,"['happines', 'confidence', 'excitement']"
+3,"['happines', 'confidence', 'excitement']"
+4,"['happines', 'confidence', 'positive_interaction']"
+5,"['happines', 'confidence', 'positive_interaction']"
+7,"['insecure']"
+8,"['positive_interaction', 'reliability']"
+9,"['confusion']"
+10,"['confusion', 'anger']"
+12,"['anger']"
+13,"['anger', 'discomfort']"
+14,"['happines', 'excitement']"
+15,"['confidence', 'positive_interaction', 'reliability']"
+16,"['discomfort']"
+17,"['positive_interaction', 'reliability']"
+18,"['positive_interaction', 'reliability']"
+19,"['reliability']"
+20,"['confusion']"
