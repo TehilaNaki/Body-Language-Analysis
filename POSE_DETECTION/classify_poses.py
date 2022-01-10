@@ -6,7 +6,7 @@ from POSE_DETECTION.detect_single_image_pose_coordinates import ImageToCoordinat
 
 data_folder = 'POSE_DETECTION/data/'
 mlb = MultiLabelBinarizer()
-x_train = pd.read_csv(data_folder + 'data_x.csv')
+x_train = pd.read_csv(data_folder + 'data_x_new_10-1-22.csv')
 y_train = pd.read_csv(data_folder + 'annotations.csv')
 
 # preprocess
