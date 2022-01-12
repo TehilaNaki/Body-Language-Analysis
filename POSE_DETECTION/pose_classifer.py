@@ -1,29 +1,18 @@
-import pandas as pd
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.multioutput import MultiOutputClassifier
-from sklearn.preprocessing import MultiLabelBinarizer
+import pickle
 from POSE_DETECTION.detect_single_image_pose_coordinates import ImageToCoordinates
+import os
+import re
 
 
 class PoseClassifier:
-    def __init__(self, data_folder='data/'):
-        mlb = MultiLabelBinarizer()
-        x_train = pd.read_csv(data_folder + '\\data_x.csv')
-        y_train = pd.read_csv(data_folder + '\\annotations.csv')
-
-        # preprocess
-        x_train['image_id'] = pd.to_numeric(x_train['image_id'], errors='coerce')
-        y_train['label'] = y_train['label'].apply(eval)
-        data = x_train.merge(y_train[['image_id', 'label']], on='image_id')
-        binary_y = mlb.fit_transform(data['label'].tolist())
-
-        # train
-        forest = RandomForestClassifier(random_state=1)
-        multi_target_forest = MultiOutputClassifier(forest, n_jobs=-1)
-        multi_target_forest.fit(data.drop(['image_id', 'label'], axis=1), binary_y)
-
-        self.mlb = mlb
-        self.model = multi_target_forest
+    def __init__(self, data_folder='model'):
+        data_folder = re.split(r'/|\\', data_folder)
+        model_path = os.sep.join(data_folder + ['multi_target_forest_dict.pickle'])
+        print(model_path)
+        with open(model_path, 'rb') as f:
+            model_dict = pickle.load(f)
+            self.mlb = model_dict['mlb']
+            self.model = model_dict['model']
         self.img2coor = ImageToCoordinates()
 
     def classify_pose(self, image_path):
@@ -33,13 +22,14 @@ class PoseClassifier:
         coordinates = [coordinates.iloc[0].tolist()]
         pred = self.model.predict(coordinates)
         transformed_pred = list(self.mlb.inverse_transform(pred)[0])
+        print(transformed_pred)
         return transformed_pred
 
 
 # example of usage
 if __name__ == '__main__':
     pose_classifier = PoseClassifier()
-    image_path = '/Users/ruthmiller/PycharmProjects/AI_project/POSE_DETECTION/images/0019.jpg'
+    image_path = '/Users/ruthmiller/PycharmProjects/AI_project/POSE_DETECTION/images/57.jpg'
     poses = pose_classifier.classify_pose(image_path)
     print(f'Image path: {image_path}')
     print(f'Poses: {poses}')

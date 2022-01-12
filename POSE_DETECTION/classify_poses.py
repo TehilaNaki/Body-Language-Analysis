@@ -3,6 +3,10 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.multioutput import MultiOutputClassifier
 from sklearn.preprocessing import MultiLabelBinarizer
 from POSE_DETECTION.detect_single_image_pose_coordinates import ImageToCoordinates
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score, confusion_matrix, precision_score, recall_score, classification_report
+import numpy as np
+import pickle
 
 data_folder = 'POSE_DETECTION/data/'
 mlb = MultiLabelBinarizer()
@@ -14,11 +18,42 @@ x_train['image_id'] = pd.to_numeric(x_train['image_id'], errors='coerce')
 y_train['label'] = y_train['label'].apply(eval)
 data = x_train.merge(y_train[['image_id', 'label']], on='image_id')
 binary_y = mlb.fit_transform(data['label'].tolist())
+features_names = data.drop(['image_id', 'label'], axis=1).columns
 
-# train
+# train/test split
+x_train, x_test, y_train, y_test = train_test_split(data, binary_y, train_size=0.9,
+                                                    random_state=42)
+x_test = x_test.drop(['image_id', 'label'], axis=1)
+
+#############################################################
+# generate synthetic data
+synthetic_data = [x_train]
+for i in range(1, 9):
+    tmp_data = data.copy()
+    tmp_data[features_names] = tmp_data[features_names] + i
+    synthetic_data.append(tmp_data)
+synthetic_data = pd.concat(synthetic_data, axis=0)
+# decide whether to use synthetic x and y
+x_train = synthetic_data
+y_train = mlb.fit_transform(x_train['label'].tolist())
+#############################################################
+
+
+# training
 forest = RandomForestClassifier(random_state=1)
 multi_target_forest = MultiOutputClassifier(forest, n_jobs=-1)
-multi_target_forest.fit(data.drop(['image_id', 'label'], axis=1), binary_y)
+multi_target_forest.fit(x_train.drop(['image_id', 'label'], axis=1), y_train)
+
+# testing
+labels_names = mlb.classes_
+y_pred = multi_target_forest.predict(x_test)
+y_pred_conf = np.max([[np.max(j) for j in i] for i in multi_target_forest.predict_proba(x_test)], 0)
+print('accuracy:', accuracy_score(y_test, y_pred, normalize=True))
+print(classification_report(y_test, y_pred, target_names=labels_names))
+
+pkl_dict = {'mlb': mlb, 'model': multi_target_forest}
+with open('POSE_DETECTION/model/multi_target_forest_dict.pickle', 'wb') as f:
+    pickle.dump(pkl_dict, f)
 
 # test1 - from the train set
 sample1 = [data.drop(['image_id', 'label'], axis=1).iloc[0].tolist()]
@@ -41,5 +76,3 @@ if sample2 is not None:
     print('image: ', image_path)
     print('prediction: ', transformed_pred2)
 
-
-# TODO need to add test set

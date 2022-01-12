@@ -22,7 +22,7 @@ NEGATIVE_EMO = ['insecure', 'fear', 'discomfort', 'anger', 'shy', 'confusion', '
 
 # Functions------------------------------------------------
 def classify_pose(path):
-    pose_classifier = PoseClassifier(r'C:\Users\Tehila Naki\PycharmProjects\AI_project\POSE_DETECTION\data')
+    pose_classifier = PoseClassifier(r'..\POSE_DETECTION\model')
     poses = pose_classifier.classify_pose(path)
     return poses
 
