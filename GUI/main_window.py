@@ -1,10 +1,10 @@
+from datetime import datetime
 from tkinter import *
+from tkinter import filedialog
 
 import cv2
 from PIL import Image
 from guizero import *
-from guizero import App, Text
-from datetime import datetime
 
 from POSE_DETECTION.pose_classifer import PoseClassifier
 
@@ -15,9 +15,9 @@ set READTHEDOCS=True
 pip install picamera
 '''
 DATA_PATH = 'POSE_DETECTION/images'
-POSITIVE_EMO = ['positive_interaction', 'authority', 'appriciative', 'confidence', 'calm', 'excitement', 'happy',
+POSITIVE_EMO = ['positive_interaction', 'authoritative', 'appriciation', 'confidence', 'calm', 'excitement', 'happines',
                 'reliability']
-NEGATIVE_EMO = ['insecure', 'fear', 'discomfort', 'anger', 'shy', 'confusion', 'stubborn', 'sad']
+NEGATIVE_EMO = ['insecure', 'fear', 'discomfort', 'anger', 'shyness', 'confusion', 'stubbornness', 'interest in surroundings']
 
 
 # Functions------------------------------------------------
@@ -56,7 +56,7 @@ def visual(emo_res, pos, neg):
         box = Box(neg_box, align='top')
         PushButton(box, command=recommand(emo), align='right', image=im)
         Emo = emo[0].upper() + emo[1:]
-        txt = Text(box, align='right', text=Emo, height=4, width=21)
+        Text(box, align='right', text=Emo, height=4, width=21)
         button_list[emo] = box
         if emo_res != None and emo in emo_res:
             button_list[emo].bg = 'green'
@@ -121,14 +121,14 @@ app.bg = 'lightblue'
 b = Box(app, grid=[0, 1])
 
 up = PushButton(b, command=upload_img, text='Upload', align='left', height=5, width=30)
-up.bg = 'red'
+up.bg = 'blue'
 
 take = PushButton(b, command=capture_img, text='Take a picture', align='left', height=5, width=30)
-take.bg = 'red'
+take.bg = 'blue'
 
 viewer = Picture(app, image='emotion_icons/mad.jpg', grid=[0, 0], height=500, width=480)
 
-rec_txt = Text(app, grid=[0, 2, 3, 1], height=5, width=110, bg='pink', align='center', text='recommand')
+rec_txt = Text(app, grid=[0, 2, 3, 1], height=5, width=110, bg='pink', align='top', text='recommand')
 
 # Display---------------------------------------------------
 app.display()
