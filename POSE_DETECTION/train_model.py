@@ -4,7 +4,7 @@ from sklearn.multioutput import MultiOutputClassifier
 from sklearn.preprocessing import MultiLabelBinarizer
 from POSE_DETECTION.detect_single_image_pose_coordinates import ImageToCoordinates
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score, confusion_matrix, precision_score, recall_score, classification_report
+from sklearn.metrics import accuracy_score, classification_report
 import numpy as np
 import pickle
 
@@ -51,6 +51,7 @@ y_pred_conf = np.max([[np.max(j) for j in i] for i in multi_target_forest.predic
 print('accuracy:', accuracy_score(y_test, y_pred, normalize=True))
 print(classification_report(y_test, y_pred, target_names=labels_names))
 
+# saving model
 pkl_dict = {'mlb': mlb, 'model': multi_target_forest}
 with open('POSE_DETECTION/model/multi_target_forest_dict.pickle', 'wb') as f:
     pickle.dump(pkl_dict, f)
