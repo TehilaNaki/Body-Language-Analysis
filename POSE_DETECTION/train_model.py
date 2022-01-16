@@ -51,10 +51,10 @@ y_pred_conf = np.max([[np.max(j) for j in i] for i in multi_target_forest.predic
 print('accuracy:', accuracy_score(y_test, y_pred, normalize=True))
 print(classification_report(y_test, y_pred, target_names=labels_names))
 
-# saving model
-pkl_dict = {'mlb': mlb, 'model': multi_target_forest}
-with open('POSE_DETECTION/model/multi_target_forest_dict.pickle', 'wb') as f:
-    pickle.dump(pkl_dict, f)
+# # saving model
+# pkl_dict = {'mlb': mlb, 'model': multi_target_forest}
+# with open('POSE_DETECTION/model/multi_target_forest_dict.pickle', 'wb') as f:
+#     pickle.dump(pkl_dict, f)
 
 # test1 - from the train set
 sample1 = [data.drop(['image_id', 'label'], axis=1).iloc[0].tolist()]
