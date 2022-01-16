@@ -1,16 +1,16 @@
 image_id,label
-1,"['happines', 'confidence']"
-2,"['happines', 'confidence', 'excitement']"
-3,"['happines', 'confidence', 'excitement']"
-4,"['happines', 'confidence', 'positive_interaction']"
-5,"['happines', 'confidence', 'positive_interaction']"
+1,"['happiness', 'confidence']"
+2,"['happiness', 'confidence', 'excitement']"
+3,"['happiness', 'confidence', 'excitement']"
+4,"['happiness', 'confidence', 'positive_interaction']"
+5,"['happiness', 'confidence', 'positive_interaction']"
 7,"['insecure']"
 8,"['positive_interaction', 'reliability']"
 9,"['confusion']"
 10,"['confusion', 'anger']"
 12,"['anger']"
 13,"['anger', 'discomfort']"
-14,"['happines', 'excitement']"
+14,"['happiness', 'excitement']"
 15,"['confidence', 'positive_interaction', 'reliability']"
 16,"['discomfort']"
 17,"['positive_interaction', 'reliability']"
@@ -21,9 +21,9 @@ image_id,label
 22,['anger']
 23,['anger']
 24,['anger']
-25,['appriciation']
-26,['appriciation']
-27,['appriciation']
+25,['appreciation']
+26,['appreciation']
+27,['appreciation']
 28,['authoritative']
 29,['authoritative']
 30,['awkwardness']
@@ -49,3 +49,60 @@ image_id,label
 55,['stubbornness']
 56,['stubbornness']
 57,['stubbornness']
+58,['insecurity', 'confusion']
+59,['insecurity']
+60,['insecurity', 'fear', 'anger']
+62,['insecurity']
+64,['insecurity', 'fear']
+65,['insecurity', 'fear']
+66,['insecurity']
+67,['fear']
+68,['fear']
+69,['shyness, 'fear']
+70,['insecurity', 'fear']
+71,['discomfort']
+72,['insecurity', 'discomfort']
+76,['authority', 'anger']
+77,['authority', 'anger']
+78,['authority', 'anger']
+79,['anger', 'stubbornness']
+81,['anger', 'stubbornness']
+82,['authority', 'anger', 'stubbornness']
+83,['authority', 'anger']
+84,['shyness']
+85,['shyness']
+86,['fear', 'shyness']
+87,['anger', 'shyness']
+88,['shyness']
+89,['shyness']
+90,['shyness']
+91,['shyness']
+92,['discomfort', 'confusion']
+93,['confusion']
+94,['confusion']
+96,['insecurity', 'confusion']
+97,['confusion']
+98,['confusion']
+99,['confusion']
+100,['stubbornness']
+101,['anger', 'stubbornness']
+102,['anger', 'stubbornness']
+104,['stubbornness']
+105,['anger', 'stubbornness']
+106,['anger', 'stubbornness']
+107,['stubbornness']
+108,['anger', 'stubbornness']
+109,['stubbornness']
+110,['stubbornness']
+111,['stubbornness']
+112,['stubbornness']
+113,['stubbornness']
+115,['stubbornness']
+118,['interest in surroundings']
+119,['interest in surroundings']
+120,['calm', 'interest in surroundings']
+124,['positive interaction', 'interest in surroundings']
+125,['interest in surroundings']
+126,['interest in surroundings']
+127,['interest in surroundings']
+
