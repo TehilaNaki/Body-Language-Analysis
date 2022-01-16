@@ -49,8 +49,8 @@ def upload_img():
     im = Image.open(filename)
     if im.format != 'jpg':
         im = im.convert("RGB")
-    if im.width > im.height and im.width > 945:
-        im = im.rotate(180)
+    if im.width > im.height and (im.width > 960 or im.height >960 ):
+        im = im.rotate(90)
     filename = get_new_name()
     viewer.image = im
     im.save(filename)
