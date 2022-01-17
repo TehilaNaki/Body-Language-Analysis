@@ -49,7 +49,7 @@ def upload_img():
     im = Image.open(filename)
     if im.format != 'jpg':
         im = im.convert("RGB")
-    if im.width > im.height and (im.width > 960 or im.height >960 ):
+    if im.width > im.height and (im.width > 960 or im.height > 960):
         im = im.rotate(90)
     filename = get_new_name()
     viewer.image = im
@@ -68,13 +68,12 @@ def capture_img():
 
 
 def recommand(*emo):
-    rec = Window(app, title='Analysis', width=740, height=700)
+    rec = Window(app, title='Analysis', width=840, height=760)
     rec.bg = 'beige'
     rec.font = 'Calibri'
     rec._text_size = 15
-    txt_rec = Text(rec, align='center')
+    txt_rec = Text(rec, align='top')
     txt_rec.value = r.rec[''.join(emo)]
-    txt_rec.align = 'left'
     rec.show()
 
 
