@@ -68,7 +68,7 @@ def capture_img():
 
 
 def recommand(*emo):
-    rec = Window(app, title='Analysis', width=840, height=760)
+    rec = Window(app, title='Analysis', width=845, height=760)
     rec.bg = 'beige'
     rec.font = 'Calibri'
     rec._text_size = 15
@@ -79,8 +79,8 @@ def recommand(*emo):
 
 def visual(emo_res, pos, neg):
     button_list = {}
-    pos_box = Box(app, grid=[1, 0, 1, 2], align='left')
-    neg_box = Box(app, grid=[2, 0, 1, 2], align='left')
+    pos_box = Box(app, grid=[1, 1, 1, 2], align='left')
+    neg_box = Box(app, grid=[2, 1, 1, 2], align='left')
     for emo in pos:
         im = Image.open('emotion_icons/' + emo + '.jpg')
         im = im.resize((50, 50))
@@ -123,11 +123,11 @@ def browseFiles():
 NAME = 'AI_PROJECT'
 MESSAGE = 'Please insert image'
 BG_IMAGE = 'emotion_icons/mad.jpg'
-app = App(title=NAME, layout='grid', height=732, width=985)
+app = App(title=NAME, layout='grid', height=747, width=985)
 app.bg = 'pink1'
-app.font = 'Calibri'
+app.font = 'Calibri bold'
 # APP Widgets---------------------------------------------------
-b = Box(app, grid=[0, 1])
+b = Box(app, grid=[0, 2])
 
 up = PushButton(b, command=upload_img, text='Upload', align='left', height=5, width=30)
 up.bg = 'pink1'
@@ -135,12 +135,15 @@ up.bg = 'pink1'
 take = PushButton(b, command=capture_img, text='Take a picture', align='left', height=5, width=30)
 take.bg = 'pink1'
 
-viewer = Picture(app, image=BG_IMAGE, grid=[0, 0], height=500, width=480)
+viewer = Picture(app, image=BG_IMAGE, grid=[0, 1], height=550, width=480)
 view_img(BG_IMAGE)
 
-Text(app, grid=[0, 2, 3, 1], height=4, width=120, bg='pink1', align='top',
+# explane
+Text(app, grid=[0, 3, 3, 1], height=4, width=120, bg='pink1', align='top',
      text='For an explanation of image analysis and additional recommendations for a specific classification:\n Click '
           'the icon button next to the classification.')
+# title
+Text(app, grid=[0, 0, 3, 1], height=1, width=120, bg='pink1', align='top', text='BODY LANGUAGE ANALYSIS')
 
 # Display---------------------------------------------------
 app.display()
