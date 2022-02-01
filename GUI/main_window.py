@@ -15,7 +15,7 @@ pip install picamera
 '''
 
 DATA_PATH = 'POSE_DETECTION/images'
-POSITIVE_EMO = ['positive_interaction', 'authoritative', 'confidence', 'calm', 'excitement', 'happines',
+POSITIVE_EMO = ['positive_interaction', 'authoritative', 'confidence', 'calm', 'excitement', 'happiness',
                 'reliability']
 NEGATIVE_EMO = ['insecure', 'fear', 'discomfort', 'anger', 'shyness', 'confusion', 'stubbornness']
 

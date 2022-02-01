@@ -89,7 +89,7 @@ rec = {
                    '\n Talking with your hands is an easy way to incorporate gestures '
                    '\n into your conversation but be careful not to make it a dance party.'
                    '\n Emphasizing words with your hands can lead you to appear more credible and assured.',
-    'happines': 'Upright and open posture '
+    'happiness': 'Upright and open posture '
                 '\n Having an upright and open posture means you are keeping the trunk of your body open and free '
                 '\n from crossed arms or legs. '
                 '\n This body stance may indicate not only how you are feeling, but also your particular personality.'
