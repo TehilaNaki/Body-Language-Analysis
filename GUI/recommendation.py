@@ -34,11 +34,6 @@ rec = {
                      '\n criticism or reprimand or disapproval, usually from a position of authority. '
                      '\n \n Palm(s) down \n Where the lower arm moves across the body with palm down this is generally'
                      '\n defiance or firm disagreement. ',
-    'appriciation': 'Mirror others '
-                    '\n Mirroring others is a way to connect and become more relatable.'
-                    '\n When mirroring, consider the jargon the other person uses, '
-                    '\n the types of discussions they enjoy and their normal volume for speaking.'
-                    '\n Copying their body language is a way to express your similarity and appreciation of someone.',
 
     'confidence': 'Firm handshake'
                   '\n When you offer someone a firm handshake, it shows your confidence and respect.'
@@ -235,3 +230,9 @@ rec = {
                                 '\n opinions. '
 
 }
+
+''''Mirror others'
+'\n Mirroring others is a way to connect and become more relatable.'
+'\n When mirroring, consider the jargon the other person uses, '
+'\n the types of discussions they enjoy and their normal volume for speaking.'
+'\n Copying their body language is a way to express your similarity and appreciation of someone.','''
