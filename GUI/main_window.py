@@ -82,7 +82,7 @@ def visual(emo_res, pos, neg):
     neg_box = Box(app, grid=[2, 1, 1, 2], align='left')
     for emo in pos:
         im = Image.open('emotion_icons/' + emo + '.jpg')
-        im = im.resize((60, 60))
+        im = im.resize((70, 70))
         box = Box(pos_box, align='top')
         PushButton(box, command=recommand, args=emo, align='right', image=im)
         Emo = emo[0].upper() + emo[1:]
@@ -94,7 +94,7 @@ def visual(emo_res, pos, neg):
             button_list[emo].bg = 'ivory2'
     for emo in neg:
         im = Image.open('emotion_icons/' + emo + '.jpg')
-        im = im.resize((60, 60))
+        im = im.resize((70, 70))
         box = Box(neg_box, align='top')
         PushButton(box, command=recommand, args=emo, align='right', image=im)
         Emo = emo[0].upper() + emo[1:]
@@ -119,26 +119,26 @@ def browseFiles():
 
 
 # APP-----------------------------------------------------
-NAME = 'AI_PROJECT'
+NAME = 'BODY LANGUAGE ANALYSIS'
 MESSAGE = 'Please insert image'
-BG_IMAGE = 'emotion_icons/mad.jpg'
-app = App(title=NAME, layout='grid', height=747, width=985)
+BG_IMAGE = 'emotion_icons/open image.png'
+app = App(title=NAME, layout='grid', height=800, width=985)
 app.bg = 'pink1'
 app.font = 'Calibri bold'
 # APP Widgets---------------------------------------------------
 b = Box(app, grid=[0, 2])
 
-up = PushButton(b, command=upload_img, text='Upload', align='left', height=5, width=30)
+up = PushButton(b, command=upload_img, text='Upload', align='left', height=5, width=35)
 up.bg = 'pink1'
 
-take = PushButton(b, command=capture_img, text='Take a picture', align='left', height=5, width=30)
+take = PushButton(b, command=capture_img, text='Take a picture', align='left', height=5, width=36)
 take.bg = 'pink1'
 
-viewer = Picture(app, image=BG_IMAGE, grid=[0, 1], height=550, width=480)
+viewer = Picture(app, image=BG_IMAGE, grid=[0, 1], height=595, width=480)
 view_img(BG_IMAGE)
 
 # explane
-Text(app, grid=[0, 3, 3, 1], height=4, width=120, bg='pink1', align='top',
+Text(app, grid=[0, 3, 3, 1], height=3, width=120, bg='pink1', align='top',
      text='For an explanation of image analysis and additional recommendations for a specific classification:\n Click '
           'the icon button next to the classification.')
 # title

@@ -4,7 +4,7 @@ image_id,label
 3,"['happiness', 'confidence', 'excitement']"
 4,"['happiness', 'confidence', 'positive interaction']"
 5,"['happiness', 'confidence', 'positive interaction']"
-7,"['insecure']"
+7,"['insecurity']"
 8,"['positive interaction', 'reliability']"
 9,"['confusion']"
 10,"['confusion', 'anger']"
@@ -195,4 +195,6 @@ image_id,label
 201,['confusion']
 202,['stubbornness','discomfort']
 203,['anger']
+204,['happiness','positive interaction','excitement']
+205,['happiness','excitement','confidence']
 

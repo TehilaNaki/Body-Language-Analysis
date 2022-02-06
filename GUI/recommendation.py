@@ -1,5 +1,5 @@
 rec = {
-    'positive_interaction': 'Maintain good eye contact'
+    'positive interaction': 'Maintain good eye contact'
                             '\n Maintaining good eye contact shows you are engaged and actively listening to what'
                             '\n someone is telling you.'
                             '\n However, if you stare too intensely, it can have the opposite effect by making'
@@ -94,7 +94,7 @@ rec = {
                 '\n Even if we smile to no one but ourselves, cracking a grin instantly boosts our self-esteem '
                 '\n levels--maybe even subliminally reminding us of times that felt better. '
                 '\n  When your confidence is lagging, try smiling and see what happens.',
-    'insecure': 'Rapid blinking'
+    'insecurity': 'Rapid blinking'
                 '\n Your eyes often express a lot about what you or someone else is feeling or thinking. '
                 '\n When you engage with someone, consider their eye movements. While it is normal to blink,'
                 '\n rapid blinking often indicates distress or discomfort with a particular situation. '
