@@ -15,9 +15,9 @@ pip install picamera
 '''
 
 DATA_PATH = 'POSE_DETECTION/images'
-POSITIVE_EMO = ['positive_interaction', 'authoritative', 'confidence', 'calm', 'excitement', 'happiness',
+POSITIVE_EMO = ['positive interaction', 'authoritative', 'confidence', 'calm', 'excitement', 'happiness',
                 'reliability']
-NEGATIVE_EMO = ['insecure', 'fear', 'discomfort', 'anger', 'shyness', 'confusion', 'stubbornness']
+NEGATIVE_EMO = ['insecurity', 'fear', 'discomfort', 'anger', 'shyness', 'confusion', 'stubbornness']
 
 
 # Functions------------------------------------------------
@@ -82,11 +82,11 @@ def visual(emo_res, pos, neg):
     neg_box = Box(app, grid=[2, 1, 1, 2], align='left')
     for emo in pos:
         im = Image.open('emotion_icons/' + emo + '.jpg')
-        im = im.resize((50, 50))
+        im = im.resize((60, 60))
         box = Box(pos_box, align='top')
         PushButton(box, command=recommand, args=emo, align='right', image=im)
         Emo = emo[0].upper() + emo[1:]
-        Text(box, align='right', text=Emo, height=4, width=21)
+        Text(box, align='right', text=Emo, height=5, width=21)
         button_list[emo] = box
         if emo_res is not None and emo in emo_res:
             button_list[emo].bg = 'LightCyan2'
@@ -94,11 +94,11 @@ def visual(emo_res, pos, neg):
             button_list[emo].bg = 'ivory2'
     for emo in neg:
         im = Image.open('emotion_icons/' + emo + '.jpg')
-        im = im.resize((50, 50))
+        im = im.resize((60, 60))
         box = Box(neg_box, align='top')
         PushButton(box, command=recommand, args=emo, align='right', image=im)
         Emo = emo[0].upper() + emo[1:]
-        Text(box, align='right', text=Emo, height=4, width=21)
+        Text(box, align='right', text=Emo, height=5, width=21)
         button_list[emo] = box
         if emo_res is not None and emo in emo_res:
             button_list[emo].bg = 'LightCyan2'

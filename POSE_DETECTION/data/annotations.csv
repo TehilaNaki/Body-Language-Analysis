@@ -2,19 +2,19 @@ image_id,label
 1,"['happiness', 'confidence']"
 2,"['happiness', 'confidence', 'excitement']"
 3,"['happiness', 'confidence', 'excitement']"
-4,"['happiness', 'confidence', 'positive_interaction']"
-5,"['happiness', 'confidence', 'positive_interaction']"
+4,"['happiness', 'confidence', 'positive interaction']"
+5,"['happiness', 'confidence', 'positive interaction']"
 7,"['insecure']"
-8,"['positive_interaction', 'reliability']"
+8,"['positive interaction', 'reliability']"
 9,"['confusion']"
 10,"['confusion', 'anger']"
 12,"['anger']"
 13,"['anger', 'discomfort']"
 14,"['happiness', 'excitement']"
-15,"['confidence', 'positive_interaction', 'reliability']"
+15,"['confidence', 'positive interaction', 'reliability']"
 16,"['discomfort']"
-17,"['positive_interaction', 'reliability']"
-18,"['positive_interaction', 'reliability']"
+17,"['positive interaction', 'reliability']"
+18,"['positive interaction', 'reliability']"
 19,"['reliability']"
 20,"['confusion']"
 21,['anger']
@@ -26,9 +26,9 @@ image_id,label
 27,['positive interaction']
 28,['authoritative']
 29,['authoritative']
-30,['awkwardness']
-31,['awkwardness']
-32,['awkwardness']
+30,['shyness','insecurity']
+31,['discomfort','shyness','fear']
+32,['discomfort']
 33,['confidence']
 34,['confidence']
 35,['confidence']
@@ -67,14 +67,14 @@ image_id,label
 73,['discomfort']
 74,['sadness', 'discomfort']
 75,['discomfort', 'stubbornness']
-76,['authority', 'anger']
-77,['authority', 'anger']
-78,['authority', 'anger']
+76,['authoritative', 'anger']
+77,['authoritative', 'anger']
+78,['authoritative', 'anger']
 79,['anger', 'stubbornness']
 80,['anger', 'stubbornness']
 81,['anger', 'stubbornness']
-82,['authority', 'anger', 'stubbornness']
-83,['authority', 'anger']
+82,['authoritative', 'anger', 'stubbornness']
+83,['authoritative', 'anger']
 84,['shyness']
 85,['shyness']
 86,['fear', 'shyness']
@@ -94,7 +94,7 @@ image_id,label
 100,['stubbornness']
 101,['anger', 'stubbornness']
 102,['anger', 'stubbornness']
-103,['authority']
+103,['authoritative']
 104,['stubbornness']
 105,['anger', 'stubbornness']
 106,['anger', 'stubbornness']
@@ -105,14 +105,14 @@ image_id,label
 111,['stubbornness']
 112,['stubbornness']
 113,['stubbornness']
-114,['authority']
+114,['authoritative']
 115,['stubbornness']
-116,['authority']
+116,['authoritative']
 117,['confidence']
 118,['positive interaction']
 119,['positive interaction']
 120,['calm', 'positive interaction']
-121,['confidence', 'authority']
+121,['confidence', 'authoritative']
 122,['calm']
 123,['calm', 'happiness']
 124,['positive interaction']
@@ -120,21 +120,21 @@ image_id,label
 126,['positive interaction']
 127,['positive interaction']
 128,['calm', 'happiness']
-129,['authority']
+129,['authoritative']
 130,['happiness']
 131,['happiness']
 132,['calm', 'happiness']
 133,['calm', 'happiness']
 134,['calm']
-135,['authority']
-136,['authority']
+135,['authoritative']
+136,['authoritative']
 137,['confidence', 'stubbornness']
 138,['confidence', 'stubbornness']
 139,['stubbornness']
 140,['happiness, 'calm']
 141,['calm']
 142,['happiness']
-143,['happiness', 'authority']
+143,['happiness', 'authoritative']
 144,['calm']
 145,['calm', 'happiness']
 146,['happiness']
@@ -144,15 +144,15 @@ image_id,label
 150,['excitement']
 151,['excitement']
 152,['positive interaction']
-153,['authority']
+153,['authoritative']
 154,['positive interaction']
 155,['stubbornness']
-156,['authority', 'stubbornness']
+156,['authoritative', 'stubbornness']
 157,['stubbornness', 'anger']
 158,['happiness']
 159,['happiness']
 160,['happiness']
-161,['happiness', 'authority']
+161,['happiness', 'authoritative']
 162,['calm', 'positive interaction', 'happiness']
 163,['happiness']
 164,['happiness']
@@ -170,8 +170,8 @@ image_id,label
 176,['calm']
 177,['reliability']
 178,['reliability']
-179,['authority', 'calm']
-180,['authority', 'calm']
+179,['authoritative', 'calm']
+180,['authoritative', 'calm']
 181,['positive interaction']
 182,['positive interaction']
 183,['positive interaction']
@@ -180,7 +180,7 @@ image_id,label
 186,['positive interaction']
 187,['reliability', 'happiness']
 188,['reliability']
-189,['authority', 'calm']
+189,['authoritative', 'calm']
 190,['shyness', 'positive interaction']
 191,['positive interaction']
 192,['positive interaction']
@@ -189,7 +189,10 @@ image_id,label
 195,['reliability']
 196,['reliability', 'happiness']
 197,['reliability']
-198,['authority', 'calm']
+198,['authoritative', 'calm']
 199,['positive interaction']
 200,['positive interaction']
+201,['confusion']
+202,['stubbornness','discomfort']
+203,['anger']
 
