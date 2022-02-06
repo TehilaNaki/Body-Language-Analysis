@@ -121,7 +121,7 @@ def browseFiles():
 # APP-----------------------------------------------------
 NAME = 'BODY LANGUAGE ANALYSIS'
 MESSAGE = 'Please insert image'
-BG_IMAGE = 'emotion_icons/open image.png'
+BG_IMAGE = 'emotion_icons/open image.jpg'
 app = App(title=NAME, layout='grid', height=800, width=985)
 app.bg = 'pink1'
 app.font = 'Calibri bold'

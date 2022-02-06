@@ -197,4 +197,5 @@ image_id,label
 203,['anger']
 204,['happiness','positive interaction','excitement']
 205,['happiness','excitement','confidence']
+206,['confidence','authoritative','reliability']
 
