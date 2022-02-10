@@ -78,6 +78,8 @@ def recommand(*emo):
 
 
 def visual(emo_res, pos, neg):
+    if emo_res is None:
+        app.info("Information","Unable to identify body language:(")
     button_list = {}
     pos_box = Box(app, grid=[1, 1, 1, 2], align='left')
     neg_box = Box(app, grid=[2, 1, 1, 2], align='left')
