@@ -21,13 +21,13 @@ image_id,label
 22,['anger']
 23,['anger']
 24,['anger']
-25,['positive interaction']
-26,['positive interaction']
-27,['positive interaction']
+25,"['positive interaction']"
+26,"['positive interaction']"
+27,"['positive interaction']"
 28,['authoritative']
 29,['authoritative']
-30,['shyness','insecurity']
-31,['discomfort','shyness','fear']
+30,"['shyness','insecurity']"
+31,"['discomfort','shyness','fear']"
 32,['discomfort']
 33,['confidence']
 34,['confidence']
@@ -35,9 +35,9 @@ image_id,label
 36,['fear']
 37,['fear']
 38,['fear']
-39,['positive interaction']
-40,['positive interaction']
-41,['positive interaction']
+39,"['positive interaction']"
+40,"['positive interaction']"
+41,"['positive interaction']"
 47,['reliability']
 48,['reliability']
 49,['reliability']
@@ -49,57 +49,57 @@ image_id,label
 55,['stubbornness']
 56,['stubbornness']
 57,['stubbornness']
-58,['insecurity', 'confusion']
+58,"['insecurity', 'confusion']"
 59,['insecurity']
-60,['insecurity', 'fear', 'anger']
+60,"['insecurity', 'fear', 'anger']"
 61,['fear']
 62,['insecurity']
 63,['discomfort']
-64,['insecurity', 'fear']
-65,['insecurity', 'fear']
+64,"['insecurity', 'fear']"
+65,"['insecurity', 'fear']"
 66,['insecurity']
 67,['fear']
 68,['fear']
-69,['shyness, 'fear']
-70,['insecurity', 'fear']
+69,"['shyness, 'fear']"
+70,"['insecurity', 'fear']"
 71,['discomfort']
-72,['insecurity', 'discomfort']
+72,"['insecurity', 'discomfort']"
 73,['discomfort']
-74,['sadness', 'discomfort']
-75,['discomfort', 'stubbornness']
-76,['authoritative', 'anger']
-77,['authoritative', 'anger']
-78,['authoritative', 'anger']
-79,['anger', 'stubbornness']
-80,['anger', 'stubbornness']
-81,['anger', 'stubbornness']
-82,['authoritative', 'anger', 'stubbornness']
-83,['authoritative', 'anger']
+74,"['sadness', 'discomfort']"
+75,"['discomfort', 'stubbornness']"
+76,"['authoritative', 'anger']"
+77,"['authoritative', 'anger']"
+78,"['authoritative', 'anger']"
+79,"['anger', 'stubbornness']"
+80,"['anger', 'stubbornness']"
+81,"['anger', 'stubbornness']"
+82,"['authoritative', 'anger', 'stubbornness']"
+83,"['authoritative', 'anger']"
 84,['shyness']
 85,['shyness']
-86,['fear', 'shyness']
-87,['anger', 'shyness']
+86,"['fear', 'shyness']"
+87,"['anger', 'shyness']"
 88,['shyness']
 89,['shyness']
 90,['shyness']
 91,['shyness']
-92,['discomfort', 'confusion']
+92,"['discomfort', 'confusion']"
 93,['confusion']
 94,['confusion']
-95['excitement', 'positive interaction']
-96,['insecurity', 'confusion']
+95,"['excitement', 'positive interaction']"
+96,"['insecurity', 'confusion']"
 97,['confusion']
 98,['confusion']
 99,['confusion']
 100,['stubbornness']
-101,['anger', 'stubbornness']
-102,['anger', 'stubbornness']
+101,"['anger', 'stubbornness']"
+102,"['anger', 'stubbornness']"
 103,['authoritative']
 104,['stubbornness']
-105,['anger', 'stubbornness']
-106,['anger', 'stubbornness']
+105,"['anger', 'stubbornness']"
+106,"['anger', 'stubbornness']"
 107,['stubbornness']
-108,['anger', 'stubbornness']
+108,"['anger', 'stubbornness']"
 109,['stubbornness']
 110,['stubbornness']
 111,['stubbornness']
@@ -109,95 +109,95 @@ image_id,label
 115,['stubbornness']
 116,['authoritative']
 117,['confidence']
-118,['positive interaction']
-119,['positive interaction']
+118,"['positive interaction']"
+119,"['positive interaction']"
 120,['calm', 'positive interaction']
 121,['confidence', 'authoritative']
 122,['calm']
 123,['calm', 'happiness']
-124,['positive interaction']
-125,['positive interaction']
-126,['positive interaction']
-127,['positive interaction']
-128,['calm', 'happiness']
+124,"['positive interaction']"
+125,"['positive interaction']"
+126,"['positive interaction']"
+127,"['positive interaction']"
+128,"['calm', 'happiness']"
 129,['authoritative']
 130,['happiness']
 131,['happiness']
-132,['calm', 'happiness']
-133,['calm', 'happiness']
+132,"['calm', 'happiness']"
+133,"['calm', 'happiness']"
 134,['calm']
 135,['authoritative']
 136,['authoritative']
-137,['confidence', 'stubbornness']
-138,['confidence', 'stubbornness']
+137,"['confidence', 'stubbornness']"
+138,"['confidence', 'stubbornness']"
 139,['stubbornness']
-140,['happiness, 'calm']
+140,"['happiness, 'calm']"
 141,['calm']
 142,['happiness']
-143,['happiness', 'authoritative']
+143,"['happiness', 'authoritative']"
 144,['calm']
-145,['calm', 'happiness']
+145,"['calm', 'happiness']"
 146,['happiness']
 147,['happiness']
 148,['excitement']
 149,['excitement']
 150,['excitement']
 151,['excitement']
-152,['positive interaction']
+152,"['positive interaction']"
 153,['authoritative']
-154,['positive interaction']
+154,"['positive interaction']"
 155,['stubbornness']
-156,['authoritative', 'stubbornness']
-157,['stubbornness', 'anger']
+156,"['authoritative', 'stubbornness']"
+157,"['stubbornness', 'anger']"
 158,['happiness']
 159,['happiness']
 160,['happiness']
-161,['happiness', 'authoritative']
-162,['calm', 'positive interaction', 'happiness']
+161,"['happiness', 'authoritative']"
+162,"['calm', 'positive interaction', 'happiness']"
 163,['happiness']
 164,['happiness']
 165,['happiness']
 166,['excitement']
 167,['excitement']
 168,['excitement']
-169,['excitement', 'happiness']
+169,"['excitement', 'happiness']"
 170,['excitement']
 171,['excitement']
 172,['excitement']
-173,['excitement', 'happiness']
-174,['excitement', 'happiness']
+173,"['excitement', 'happiness']"
+174,"['excitement', 'happiness']"
 175,['calm']
 176,['calm']
 177,['reliability']
 178,['reliability']
-179,['authoritative', 'calm']
-180,['authoritative', 'calm']
-181,['positive interaction']
-182,['positive interaction']
-183,['positive interaction']
-184,['positive interaction']
-185,['calm', 'happiness']
-186,['positive interaction']
-187,['reliability', 'happiness']
+179,"['authoritative', 'calm']"
+180,"['authoritative', 'calm']"
+181,"['positive interaction']"
+182,"['positive interaction']"
+183,"['positive interaction']"
+184,"['positive interaction']"
+185,"['calm', 'happiness']"
+186,"['positive interaction']"
+187,"['reliability', 'happiness']"
 188,['reliability']
-189,['authoritative', 'calm']
-190,['shyness', 'positive interaction']
-191,['positive interaction']
-192,['positive interaction']
-193,['positive interaction']
-194,['positive interaction']
+189,"['authoritative', 'calm']"
+190,"['shyness', 'positive interaction']"
+191,"['positive interaction']"
+192,"['positive interaction']"
+193,"['positive interaction']"
+194,"['positive interaction']"
 195,['reliability']
-196,['reliability', 'happiness']
-197,['reliability']
-198,['authoritative', 'calm']
-199,['positive interaction']
-200,['positive interaction']
+196,"['reliability', 'happiness']"
+197,"['reliability']"
+198,"['authoritative', 'calm']"
+199,"['positive interaction']"
+200,"['positive interaction']"
 201,['confusion']
-202,['stubbornness','discomfort']
+202,"['stubbornness','discomfort']"
 203,['anger']
-204,['happiness','positive interaction','excitement']
-205,['happiness','excitement','confidence']
-206,['confidence','authoritative','reliability']
+204,"['happiness','positive interaction','excitement']"
+205,"['happiness','excitement','confidence']"
+206,"['confidence','authoritative','reliability']"
 207, ['confidence']
 208, ['confidence']
 209, ['confidence']
@@ -248,16 +248,16 @@ image_id,label
 254, ['excitement']
 255, ['excitement']
 256, ['excitement']
-257, ['excitement','happiness']
+257, "['excitement','happiness']"
 258, ['excitement']
 259, ['insecurity']
 260, ['insecurity']
 261, ['insecurity']
-262, ['insecurity', 'shyness']
+262, "['insecurity', 'shyness']"
 263, ['insecurity']
 264, ['insecurity']
 265, ['insecurity']
-266, ['insecurity','shyness','confusion']
+266, "['insecurity','shyness','confusion']"
 267, ['insecurity']
 268, ['insecurity']
 269, ['confusion']
