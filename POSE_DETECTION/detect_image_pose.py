@@ -22,7 +22,10 @@ landmarks = {'RIGHT_SHOULDER': mp_pose_landmark.RIGHT_SHOULDER, 'LEFT_SHOULDER':
               'RIGHT_ANKLE': mp_pose_landmark.RIGHT_ANKLE, 'LEFT_ANKLE': mp_pose_landmark.LEFT_ANKLE,
               'RIGHT_HEEL': mp_pose_landmark.RIGHT_HEEL, 'LEFT_HEEL': mp_pose_landmark.LEFT_HEEL,
               'RIGHT_FOOT_INDEX': mp_pose_landmark.RIGHT_FOOT_INDEX,
-              'LEFT_FOOT_INDEX': mp_pose_landmark.LEFT_FOOT_INDEX}
+              'LEFT_FOOT_INDEX': mp_pose_landmark.LEFT_FOOT_INDEX, 'LEFT_EYE': mp_pose_landmark.LEFT_EYE,
+             'LEFT_EYE_INNER': mp_pose_landmark.LEFT_EYE_INNER, 'LEFT_EYE_OUTER': mp_pose_landmark.LEFT_EYE_OUTER,
+             'RIGHT_EYE': mp_pose_landmark.RIGHT_EYE, 'RIGHT_EYE_INNER': mp_pose_landmark.RIGHT_EYE_INNER,
+             'RIGHT_EYE_OUTER': mp_pose_landmark.RIGHT_EYE_OUTER}
 
 # For static images:
 data_folder = 'POSE_DETECTION/images/'
@@ -78,5 +81,5 @@ with mp_pose.Pose(
         dict_list.append(res)
 
 res_df = pd.DataFrame(dict_list)
-# res_df.to_csv('/Users/ruthmiller/PycharmProjects/AI_project/POSE_DETECTION/data/data_x_new_10-1-22.csv', index=False)
+# res_df.to_csv('/Users/ruthmiller/PycharmProjects/AI_project/POSE_DETECTION/data/data_x_new_10-2-22.csv', index=False)
 

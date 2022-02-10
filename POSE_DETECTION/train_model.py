@@ -10,13 +10,16 @@ import pickle
 
 data_folder = 'POSE_DETECTION/data/'
 mlb = MultiLabelBinarizer()
-x_train = pd.read_csv(data_folder + 'data_x_new_10-1-22.csv')
-y_train = pd.read_csv(data_folder + 'annotations.csv')
+x_train = pd.read_csv(data_folder + 'data_x_new_10-2-22.csv')
+y_train = pd.read_csv(data_folder + 'annotations.csv', on_bad_lines='skip')
 
 # preprocess
 x_train['image_id'] = pd.to_numeric(x_train['image_id'], errors='coerce')
 y_train['label'] = y_train['label'].apply(eval)
 data = x_train.merge(y_train[['image_id', 'label']], on='image_id')
+# adding features
+data['l_eye_l_hand_diff'] = data['LEFT_EYE_Y'] - data['LEFT_WRIST_Y']
+data['r_eye_r_hand_diff'] = data['RIGHT_EYE_Y'] - data['RIGHT_WRIST_Y']
 binary_y = mlb.fit_transform(data['label'].tolist())
 features_names = data.drop(['image_id', 'label'], axis=1).columns
 
@@ -40,6 +43,7 @@ y_train = mlb.fit_transform(x_train['label'].tolist())
 
 
 # training
+x_train = x_train.reset_index(drop=True)
 forest = RandomForestClassifier(random_state=1)
 multi_target_forest = MultiOutputClassifier(forest, n_jobs=-1)
 multi_target_forest.fit(x_train.drop(['image_id', 'label'], axis=1), y_train)
