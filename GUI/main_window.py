@@ -18,7 +18,7 @@ DATA_PATH = 'POSE_DETECTION/images'
 POSITIVE_EMO = ['positive interaction', 'authoritative', 'confidence', 'calm', 'excitement', 'happiness',
                 'reliability']
 NEGATIVE_EMO = ['insecurity', 'fear', 'discomfort', 'anger', 'shyness', 'confusion', 'stubbornness']
-
+FILES_TYPES=['jpg','png','jpeg']
 
 # Functions------------------------------------------------
 def classify_pose(path):
@@ -110,12 +110,15 @@ def visual(emo_res, pos, neg):
 def browseFiles():
     filename = filedialog.askopenfilename(initialdir="/Pictures",
                                           title="Select a File",
-                                          filetypes=(("IMAGE_FILES",
-                                                      "*.jpg*"),
-                                                     ("all files",
-                                                      "*.*")))
-
-    return filename
+                                          filetypes=(("JPG","*.jpg*"),
+                                                     ("PNG", "*.png*"),
+                                                     ("JPEG","*.jpeg*")
+                                                     ))
+    if filename!='' and filename.split('.')[-1] not in FILES_TYPES:
+        app.error('Not Valid','Unsupported file type\n Select image file type!!')
+        return browseFiles()
+    else:
+        return filename
 
 
 # APP-----------------------------------------------------
