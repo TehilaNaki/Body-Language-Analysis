@@ -18,7 +18,7 @@ DATA_PATH = 'POSE_DETECTION/images'
 POSITIVE_EMO = ['positive interaction', 'authoritative', 'confidence', 'calm', 'excitement', 'happiness',
                 'reliability']
 NEGATIVE_EMO = ['insecurity', 'fear', 'discomfort', 'anger', 'shyness', 'confusion', 'stubbornness']
-FILES_TYPES=['jpg','png','jpeg']
+FILES_TYPES=['JPG','PNG','jpg','png','jpeg']
 
 # Functions------------------------------------------------
 def classify_pose(path):
@@ -48,8 +48,9 @@ def upload_img():
     im = Image.open(filename)
     if im.format != 'jpg':
         im = im.convert("RGB")
-    if im.width > im.height and (im.width > 960 or im.height > 960):
-        im = im.rotate(90)
+     #   im = im.rotate(90)
+    if im.width > 595 or im.height > 480:
+        im.resize((595, 480))
     filename = get_new_name()
     viewer.image = im
     im.save(filename)
@@ -115,7 +116,7 @@ def browseFiles():
                                                      ("all files",
                                                       "*.*")))
     if filename!='' and filename.split('.')[-1] not in FILES_TYPES:
-        app.error('Not Valid','Unsupported file type\n Select image file type!!')
+        app.error(f'Not Valid',f'Unsupported file type\n Select image file type!!\n {FILES_TYPES}')
         return browseFiles()
     else:
         return filename
