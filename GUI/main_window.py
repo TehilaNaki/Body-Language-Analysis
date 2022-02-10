@@ -110,10 +110,10 @@ def visual(emo_res, pos, neg):
 def browseFiles():
     filename = filedialog.askopenfilename(initialdir="/Pictures",
                                           title="Select a File",
-                                          filetypes=(("JPG","*.jpg*"),
-                                                     ("PNG", "*.png*"),
-                                                     ("JPEG","*.jpeg*")
-                                                     ))
+                                          filetypes=(("IMAGE_FILES",
+                                                      "*.*"),
+                                                     ("all files",
+                                                      "*.*")))
     if filename!='' and filename.split('.')[-1] not in FILES_TYPES:
         app.error('Not Valid','Unsupported file type\n Select image file type!!')
         return browseFiles()
