@@ -18,13 +18,7 @@ class ImageToCoordinates:
                           'RIGHT_ANKLE': mp_pose_landmark.RIGHT_ANKLE, 'LEFT_ANKLE': mp_pose_landmark.LEFT_ANKLE,
                           'RIGHT_HEEL': mp_pose_landmark.RIGHT_HEEL, 'LEFT_HEEL': mp_pose_landmark.LEFT_HEEL,
                           'RIGHT_FOOT_INDEX': mp_pose_landmark.RIGHT_FOOT_INDEX,
-                          'LEFT_FOOT_INDEX': mp_pose_landmark.LEFT_FOOT_INDEX, 'LEFT_EYE': mp_pose_landmark.LEFT_EYE,
-                          'LEFT_EYE_INNER': mp_pose_landmark.LEFT_EYE_INNER,
-                          'LEFT_EYE_OUTER': mp_pose_landmark.LEFT_EYE_OUTER,
-                          'RIGHT_EYE': mp_pose_landmark.RIGHT_EYE, 'RIGHT_EYE_INNER': mp_pose_landmark.RIGHT_EYE_INNER,
-                          'RIGHT_EYE_OUTER': mp_pose_landmark.RIGHT_EYE_OUTER,
-                          'MOUTH_RIGHT': mp_pose_landmark.MOUTH_RIGHT,
-                          'MOUTH_LEFT': mp_pose_landmark.MOUTH_LEFT}
+                          'LEFT_FOOT_INDEX': mp_pose_landmark.LEFT_FOOT_INDEX}
         self.img_ext = ('.jpeg', '.jpg', '.png', '.tiff')
 
     def get_coordinates(self, image_path):
@@ -45,10 +39,6 @@ class ImageToCoordinates:
                 res[landmark_key + '_X'] = results.pose_landmarks.landmark[self.landmarks[landmark_key]].x * image_width
                 res[landmark_key + '_Y'] = results.pose_landmarks.landmark[
                                                self.landmarks[landmark_key]].y * image_height
-                res[landmark_key + '_Z'] = results.pose_landmarks.landmark[
-                    self.landmarks[landmark_key]].z
                 res[landmark_key + '_VISIBILITY'] = results.pose_landmarks.landmark[
                     self.landmarks[landmark_key]].visibility
-            # res['l_eye_l_hand_diff'] = res['LEFT_EYE_Y'] - res['LEFT_WRIST_Y']
-            # res['r_eye_r_hand_diff'] = res['RIGHT_EYE_Y'] - res['RIGHT_WRIST_Y']
             return pd.DataFrame([res])

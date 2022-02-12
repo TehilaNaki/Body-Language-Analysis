@@ -7,7 +7,7 @@ import re
 class PoseClassifier:
     def __init__(self, data_folder='model'):
         data_folder = re.split(r'/|\\', data_folder)
-        model_path = os.sep.join(data_folder + ['multi_target_forest_dict_v3.pickle'])
+        model_path = os.sep.join(data_folder + ['multi_target_forest_dict.pickle'])
         print(model_path)
         with open(model_path, 'rb') as f:
             model_dict = pickle.load(f)

@@ -17,7 +17,6 @@ y_train = pd.read_csv(data_folder + 'annotations.csv', on_bad_lines='skip')
 x_train['image_id'] = pd.to_numeric(x_train['image_id'], errors='coerce')
 y_train['label'] = y_train['label'].apply(eval)
 data = x_train.merge(y_train[['image_id', 'label']], on='image_id')
-data['wrist_diff'] = data['LEFT_WRIST_X'] - data['RIGHT_WRIST_X']
 # col2drop = [[col + '_X', col + '_Y', col + '_VISIBILITY'] for col in ['LEFT_EYE', 'LEFT_EYE_INNER', 'LEFT_EYE_OUTER',
 #                                                                       'RIGHT_EYE', 'RIGHT_EYE_INNER', 'RIGHT_EYE_OUTER',
 #                                                                       'MOUTH_LEFT', 'MOUTH_RIGHT']]
@@ -28,7 +27,7 @@ binary_y = mlb.fit_transform(data['label'].tolist())
 features_names = data.drop(['image_id', 'label'], axis=1).columns
 
 # train/test split
-x_train, x_test, y_train, y_test = train_test_split(data, binary_y, train_size=0.8,
+x_train, x_test, y_train, y_test = train_test_split(data, binary_y, train_size=0.9,
                                                     random_state=42)
 x_test = x_test.drop(['image_id', 'label'], axis=1)
 
@@ -64,7 +63,7 @@ print(classification_report(y_test, y_pred, target_names=labels_names))
 
 # # saving model
 # pkl_dict = {'mlb': mlb, 'model': multi_target_forest}
-# with open('POSE_DETECTION/model/multi_target_forest_dict_v3.pickle', 'wb') as f:
+# with open('POSE_DETECTION/model/multi_target_forest_dict_v4.pickle', 'wb') as f:
 #     pickle.dump(pkl_dict, f)
 
 # test1 - from the train set
@@ -87,4 +86,3 @@ print('true label: ', true_label1)
 #     transformed_pred2 = list(mlb.inverse_transform(pred2)[0])
 #     print('image: ', image_path)
 #     print('prediction: ', transformed_pred2)
-#
