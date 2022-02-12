@@ -4,26 +4,26 @@ image_id,label
 3,"['happiness','confidence','excitement']"
 4,"['happiness','confidence','positive interaction']"
 5,"['happiness','confidence','positive interaction']"
-7,"['insecurity']"
+7,['insecurity']
 8,"['positive interaction','reliability']"
-9,"['confusion']"
+9,['confusion']
 10,"['confusion','anger']"
-12,"['anger']"
-13,"['anger','discomfort']"
+12,['anger']
+13,['anger']
 14,"['happiness','excitement']"
 15,"['confidence','positive interaction','reliability']"
-16,"['discomfort']"
+16,['discomfort']
 17,"['positive interaction','reliability']"
 18,"['positive interaction','reliability']"
-19,"['reliability']"
-20,"['confusion']"
+19,['reliability']
+20,['confusion']
 21,['anger']
 22,['anger']
 23,['anger']
 24,['anger']
-25,"['positive interaction']"
-26,"['positive interaction']"
-27,"['positive interaction']"
+25,['positive interaction']
+26,['positive interaction']
+27,['positive interaction']
 28,['authoritative']
 29,['authoritative']
 30,"['shyness','insecurity']"
@@ -35,9 +35,9 @@ image_id,label
 36,['fear']
 37,['fear']
 38,['fear']
-39,"['positive interaction']"
-40,"['positive interaction']"
-41,"['positive interaction']"
+39,['positive interaction']
+40,['positive interaction']
+41,['positive interaction']
 47,['reliability']
 48,['reliability']
 49,['reliability']
@@ -66,7 +66,7 @@ image_id,label
 72,"['insecurity','discomfort']"
 73,['discomfort']
 74,"['sadness','discomfort']"
-75,"['discomfort','stubbornness']"
+75,['stubbornness']
 76,"['authoritative','anger']"
 77,"['authoritative','anger']"
 78,"['authoritative','anger']"
@@ -109,16 +109,16 @@ image_id,label
 115,['stubbornness']
 116,['authoritative']
 117,['confidence']
-118,"['positive interaction']"
-119,"['positive interaction']"
+118,['positive interaction']
+119,['positive interaction']
 120,"['calm','positive interaction']"
 121,"['confidence','authoritative']"
 122,['calm']
 123,"['calm','happiness']"
-124,"['positive interaction']"
-125,"['positive interaction']"
-126,"['positive interaction']"
-127,"['positive interaction']"
+124,['positive interaction']
+125,['positive interaction']
+126,['positive interaction']
+127,['positive interaction']
 128,"['calm','happiness']"
 129,['authoritative']
 130,['happiness']
@@ -143,9 +143,9 @@ image_id,label
 149,['excitement']
 150,['excitement']
 151,['excitement']
-152,"['positive interaction']"
+152,['positive interaction']
 153,['authoritative']
-154,"['positive interaction']"
+154,['positive interaction']
 155,['stubbornness']
 156,"['authoritative','stubbornness']"
 157,"['stubbornness','anger']"
@@ -172,26 +172,26 @@ image_id,label
 178,['reliability']
 179,"['authoritative','calm']"
 180,"['authoritative','calm']"
-181,"['positive interaction']"
-182,"['positive interaction']"
-183,"['positive interaction']"
-184,"['positive interaction']"
+181,['positive interaction']
+182,['positive interaction']
+183,['positive interaction']
+184,['positive interaction']
 185,"['calm','happiness']"
-186,"['positive interaction']"
+186,['positive interaction']
 187,"['reliability','happiness']"
 188,['reliability']
 189,"['authoritative','calm']"
 190,"['shyness','positive interaction']"
-191,"['positive interaction']"
-192,"['positive interaction']"
-193,"['positive interaction']"
-194,"['positive interaction']"
+191,['positive interaction']
+192,['positive interaction']
+193,['positive interaction']
+194,['positive interaction']
 195,['reliability']
 196,"['reliability','happiness']"
 197,['reliability']
 198,"['authoritative','calm']"
-199,"['positive interaction']"
-200,"['positive interaction']"
+199,['positive interaction']
+200,['positive interaction']
 201,['confusion']
 202,"['stubbornness','discomfort']"
 203,['anger']
@@ -337,9 +337,15 @@ image_id,label
 343,"['shyness','insecurity']"
 344,['shyness']
 345,['anger']
-346,"['anger,'stubbornness']"
-347,"['anger,'stubbornness']"
+346,['anger']
+347,['anger']
 348,['anger']
 349,['anger']
-350,"['anger, 'stubbornness']"
-351,"['anger, 'stubbornness']"
+350,['anger']
+351,['anger']
+352,['sadness']
+353,['sadness']
+354,['sadness']
+355,['sadness']
+356,['sadness']
+357,['sadness']
