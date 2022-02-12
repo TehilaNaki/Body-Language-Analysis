@@ -6,19 +6,12 @@ from guizero import *
 from POSE_DETECTION.pose_classifer import PoseClassifier
 import recommendation as r
 
-'''
-#TODO
-pip3 install guizero
-pip3 install guizero[images]
-set READTHEDOCS=True
-pip install picamera
-'''
-
 DATA_PATH = 'POSE_DETECTION/images'
 POSITIVE_EMO = ['positive interaction', 'authoritative', 'confidence', 'calm', 'excitement', 'happiness',
                 'reliability']
 NEGATIVE_EMO = ['insecurity', 'fear', 'discomfort', 'anger', 'shyness', 'confusion', 'stubbornness']
-FILES_TYPES=['JPG','PNG','jpg','png','jpeg']
+FILES_TYPES = ['JPG', 'PNG', 'jpg', 'png', 'jpeg']
+
 
 # Functions------------------------------------------------
 def classify_pose(path):
@@ -48,7 +41,7 @@ def upload_img():
     im = Image.open(filename)
     if im.format != 'jpg':
         im = im.convert("RGB")
-     #   im = im.rotate(90)
+    #   im = im.rotate(90)
     if im.width > 595 or im.height > 480:
         im.resize((595, 480))
     filename = get_new_name()
@@ -67,19 +60,20 @@ def capture_img():
     view_img(filename)
 
 
-def recommand(*emo):
-    rec = Window(app, title='Analysis', width=845, height=760)
+def recommend(*emo):
+    emo = ''.join(emo)
+    rec = Window(app, title=emo, width=850, height=765)
     rec.bg = 'beige'
     rec.font = 'Calibri'
     rec._text_size = 15
     txt_rec = Text(rec, align='top')
-    txt_rec.value = r.rec[''.join(emo)]
+    txt_rec.value = r.rec[emo]
     rec.show()
 
 
 def visual(emo_res, pos, neg):
-    if emo_res is None:
-        app.info("Information","Unable to identify body language:(")
+    if emo_res is None or len(emo_res) == 0:
+        app.info("Information", "Unable to identify body language:(")
     button_list = {}
     pos_box = Box(app, grid=[1, 1, 1, 2], align='left')
     neg_box = Box(app, grid=[2, 1, 1, 2], align='left')
@@ -87,7 +81,7 @@ def visual(emo_res, pos, neg):
         im = Image.open('emotion_icons/' + emo + '.jpg')
         im = im.resize((70, 70))
         box = Box(pos_box, align='top')
-        PushButton(box, command=recommand, args=emo, align='right', image=im)
+        PushButton(box, command=recommend, args=emo, align='right', image=im)
         Emo = emo[0].upper() + emo[1:]
         Text(box, align='right', text=Emo, height=5, width=21)
         button_list[emo] = box
@@ -99,7 +93,7 @@ def visual(emo_res, pos, neg):
         im = Image.open('emotion_icons/' + emo + '.jpg')
         im = im.resize((70, 70))
         box = Box(neg_box, align='top')
-        PushButton(box, command=recommand, args=emo, align='right', image=im)
+        PushButton(box, command=recommend, args=emo, align='right', image=im)
         Emo = emo[0].upper() + emo[1:]
         Text(box, align='right', text=Emo, height=5, width=21)
         button_list[emo] = box
@@ -117,8 +111,8 @@ def browseFiles():
                                                       "*.*"),
                                                      ("all files",
                                                       "*.*")))
-    if filename!='' and filename.split('.')[-1] not in FILES_TYPES:
-        app.error(f'Not Valid',f'Unsupported file type\n Select image file type!!\n {FILES_TYPES}')
+    if filename != '' and filename.split('.')[-1] not in FILES_TYPES:
+        app.error(f'Not Valid', f'Unsupported file type\n Select image file type!!\n {FILES_TYPES}')
         return browseFiles()
     else:
         return filename
