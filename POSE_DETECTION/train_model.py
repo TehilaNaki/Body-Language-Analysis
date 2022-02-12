@@ -10,32 +10,39 @@ import pickle
 
 data_folder = 'POSE_DETECTION/data/'
 mlb = MultiLabelBinarizer()
-x_train = pd.read_csv(data_folder + 'data_x_new_10-2-22.csv')
+x_train = pd.read_csv(data_folder + 'data_x_new_12-2-22.csv')
 y_train = pd.read_csv(data_folder + 'annotations.csv', on_bad_lines='skip')
 
 # preprocess
 x_train['image_id'] = pd.to_numeric(x_train['image_id'], errors='coerce')
 y_train['label'] = y_train['label'].apply(eval)
 data = x_train.merge(y_train[['image_id', 'label']], on='image_id')
-# adding features
-data['l_eye_l_hand_diff'] = data['LEFT_EYE_Y'] - data['LEFT_WRIST_Y']
-data['r_eye_r_hand_diff'] = data['RIGHT_EYE_Y'] - data['RIGHT_WRIST_Y']
+data['wrist_diff'] = data['LEFT_WRIST_X'] - data['RIGHT_WRIST_X']
+# col2drop = [[col + '_X', col + '_Y', col + '_VISIBILITY'] for col in ['LEFT_EYE', 'LEFT_EYE_INNER', 'LEFT_EYE_OUTER',
+#                                                                       'RIGHT_EYE', 'RIGHT_EYE_INNER', 'RIGHT_EYE_OUTER',
+#                                                                       'MOUTH_LEFT', 'MOUTH_RIGHT']]
+# col2drop = [item for sublist in col2drop for item in sublist]
+# data = data.drop(col2drop, 1)
+# binaryzing
 binary_y = mlb.fit_transform(data['label'].tolist())
 features_names = data.drop(['image_id', 'label'], axis=1).columns
 
 # train/test split
-x_train, x_test, y_train, y_test = train_test_split(data, binary_y, train_size=0.9,
+x_train, x_test, y_train, y_test = train_test_split(data, binary_y, train_size=0.8,
                                                     random_state=42)
 x_test = x_test.drop(['image_id', 'label'], axis=1)
 
 #############################################################
 # generate synthetic data
 synthetic_data = [x_train]
+cols2change = [feature for feature in features_names if not (str(feature).endswith('_VISIBILITY') or str(feature).endswith('_Z'))]
 for i in range(1, 9):
     tmp_data = data.copy()
-    tmp_data[features_names] = tmp_data[features_names] + i
+    # tmp_data[features_names] = tmp_data[features_names] + i
+    tmp_data[cols2change] = tmp_data[cols2change] + i
     synthetic_data.append(tmp_data)
 synthetic_data = pd.concat(synthetic_data, axis=0)
+
 # decide whether to use synthetic x and y
 x_train = synthetic_data
 y_train = mlb.fit_transform(x_train['label'].tolist())
@@ -57,7 +64,7 @@ print(classification_report(y_test, y_pred, target_names=labels_names))
 
 # # saving model
 # pkl_dict = {'mlb': mlb, 'model': multi_target_forest}
-# with open('POSE_DETECTION/model/multi_target_forest_dict.pickle', 'wb') as f:
+# with open('POSE_DETECTION/model/multi_target_forest_dict_v3.pickle', 'wb') as f:
 #     pickle.dump(pkl_dict, f)
 
 # test1 - from the train set
@@ -70,14 +77,14 @@ print('image: ', image_id1)
 print('prediction: ', transformed_pred1)
 print('true label: ', true_label1)
 
-# test2 - classify single image, using the ImageToCoordinates class (also from the train set)
-img2coor = ImageToCoordinates()
-image_path = '/Users/ruthmiller/PycharmProjects/AI_project/POSE_DETECTION/images/0019.jpg'
-sample2 = img2coor.get_coordinates(image_path)
-if sample2 is not None:
-    sample2 = [sample2.iloc[0].tolist()]
-    pred2 = multi_target_forest.predict(sample2)
-    transformed_pred2 = list(mlb.inverse_transform(pred2)[0])
-    print('image: ', image_path)
-    print('prediction: ', transformed_pred2)
-
+# # test2 - classify single image, using the ImageToCoordinates class (also from the train set)
+# img2coor = ImageToCoordinates()
+# image_path = '/Users/ruthmiller/PycharmProjects/AI_project/POSE_DETECTION/images/0019.jpg'
+# sample2 = img2coor.get_coordinates(image_path)
+# if sample2 is not None:
+#     sample2 = [sample2.iloc[0].tolist()]
+#     pred2 = multi_target_forest.predict(sample2)
+#     transformed_pred2 = list(mlb.inverse_transform(pred2)[0])
+#     print('image: ', image_path)
+#     print('prediction: ', transformed_pred2)
+#
