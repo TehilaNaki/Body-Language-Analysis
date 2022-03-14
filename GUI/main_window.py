@@ -35,7 +35,6 @@ def view_img(img_path):
     poses = classify_pose(img_path)
     visual(poses, POSITIVE_EMO, NEGATIVE_EMO)
 
-
 def upload_img():
     filename = browseFiles()
     im = Image.open(filename)
